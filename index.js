@@ -100,8 +100,8 @@ console.log('----------task-9---------------');
 
 const pirminisSkaicius = (a) => {
     if (typeof a !== 'number' || a <= 1) return 'Nera pirminis skaicius';
-    let counter = 1;
-    for (let i = 2; i <= a; i++)
+    let counter = 0;
+    for (let i = 2; i < a; i++)
         if (a % i === 0) {
             counter++;
         }
@@ -112,7 +112,7 @@ const pirminisSkaicius = (a) => {
     return 'Yra pirminis skaicius';
 };
 
-console.log(pirminisSkaicius(12));
+console.log(pirminisSkaicius(11));
 /* 10. Parašyti funkciją telefonoNumeris.Funkcija turi priimti vieną kintamąjį - masyvą.Masyvo elementai - skaičiai,
         ilgis - 10. Funkcija turi grąžinti telefono numerį tokiu formatu - "(XXX) XXX-XXXX". (10 taškų); */
 console.log('----------task-10---------------');
