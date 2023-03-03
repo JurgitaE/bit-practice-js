@@ -59,6 +59,7 @@ kiekvienos raidės. (7 taškai);
 */
 console.log('----------task-7---------------');
 
+
 const newArr2 = Array(100).fill(0).map(a => 'ABCD'[Math.floor(Math.random() * 4)]);
 
 const counter = newArr2.reduce((t, c) => {
@@ -70,11 +71,12 @@ const counter = newArr2.reduce((t, c) => {
 console.log(newArr2);
 console.log(`A: ${counter['A']} B: ${counter['B']} C: ${counter['C']} D: ${counter['D']}`);
 
-console.clear();
 /* 8. Parašyti funkciją - lygineSuma.Funkcijos parametrai - du kintamieji.Testų reikalavimai - abu kitamieji turi būti
 arba skaičiai arba masyvai(negali būti vienas skaičius, kitas masyvas). Jei kintamieji skaičiai, grąžinti skaičių
 sumą, jei kintamieji masyvai - grąžinti masyvų ilgių sumą.Jei abu kintamieji skaičiai arba masyvai, bet suma nelyginė
 - grąžinti tekstą, kad suma nelyginė. (10 taškų); */
+
+console.log('----------task-8---------------');
 
 function lygineSuma(a, b) {
 
@@ -88,11 +90,13 @@ function lygineSuma(a, b) {
     return 'Abu kintamieji privalo  buti skaičiai arba masyvai';
 }
 
-console.log(lygineSuma([2], 5));
+console.log(lygineSuma([2], [5]));
 
 /* 9. Parašyti funkciją pirminisSkaicius.Funkcija turi vieną kintamąjį.Turi būti patikrinimas, kad kintamasis yra
    skaičius.Funkcija turi grąžinti ar pateiktas skaičius yra pirminis(pirminis skaičius yra tas, kuris dalinasi tik iš
    savęs ir tik iš vieneto be liekanos.)(10 taškų); */
+
+console.log('----------task-9---------------');
 
 const pirminisSkaicius = (a) => {
     if (typeof a !== 'number' || a <= 1) return 'Nera pirminis skaicius';
@@ -111,9 +115,10 @@ const pirminisSkaicius = (a) => {
 console.log(pirminisSkaicius(12));
 /* 10. Parašyti funkciją telefonoNumeris.Funkcija turi priimti vieną kintamąjį - masyvą.Masyvo elementai - skaičiai,
         ilgis - 10. Funkcija turi grąžinti telefono numerį tokiu formatu - "(XXX) XXX-XXXX". (10 taškų); */
+console.log('----------task-10---------------');
 
 function telefonoNumeris(arr) {
     const joinedArr = arr.join("");
     return `(${joinedArr.slice(0, 3)}) ${joinedArr.slice(3, 6)}-${joinedArr.slice(6)}`;
 }
-console.log(telefonoNumeris([1, 2, 3, 4, 5, 6, 7, 8, 9, 2]));
+console.log(telefonoNumeris(Array(10).fill(0).map(a => Math.floor(Math.random() * (10)))));
