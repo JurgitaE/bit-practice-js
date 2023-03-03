@@ -111,3 +111,9 @@ const pirminisSkaicius = (a) => {
 console.log(pirminisSkaicius(12));
 /* 10. Parašyti funkciją telefonoNumeris.Funkcija turi priimti vieną kintamąjį - masyvą.Masyvo elementai - skaičiai,
         ilgis - 10. Funkcija turi grąžinti telefono numerį tokiu formatu - "(XXX) XXX-XXXX". (10 taškų); */
+
+function telefonoNumeris(arr) {
+    const joinedArr = arr.join("");
+    return `(${joinedArr.slice(0, 3)}) ${joinedArr.slice(3, 6)}-${joinedArr.slice(6)}`;
+}
+console.log(telefonoNumeris([1, 2, 3, 4, 5, 6, 7, 8, 9, 2]));
