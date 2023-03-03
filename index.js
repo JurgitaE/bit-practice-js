@@ -94,5 +94,20 @@ console.log(lygineSuma([2], 5));
    skaičius.Funkcija turi grąžinti ar pateiktas skaičius yra pirminis(pirminis skaičius yra tas, kuris dalinasi tik iš
    savęs ir tik iš vieneto be liekanos.)(10 taškų); */
 
+const pirminisSkaicius = (a) => {
+    if (typeof a !== 'number' || a <= 1) return 'Nera pirminis skaicius';
+    let counter = 1;
+    for (let i = 2; i <= a; i++)
+        if (a % i === 0) {
+            counter++;
+        }
+    if (counter > 2) {
+        return 'Nera pirminis skaicius';
+    }
+
+    return 'Yra pirminis skaicius';
+};
+
+console.log(pirminisSkaicius(12));
 /* 10. Parašyti funkciją telefonoNumeris.Funkcija turi priimti vieną kintamąjį - masyvą.Masyvo elementai - skaičiai,
         ilgis - 10. Funkcija turi grąžinti telefono numerį tokiu formatu - "(XXX) XXX-XXXX". (10 taškų); */
