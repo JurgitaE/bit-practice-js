@@ -54,23 +54,45 @@ for (let i of newArr) {
 console.log(newArr);
 console.log(`max value ${max}`);
 
-console.clear();
 /* 7. Sugeneruokite masyvą, kurio reikšmės atsitiktinės raidės A, B, C ir D, o ilgis 100. Suskaičiuokite kiek yra
-   kiekvienos raidės. (7 taškai);
- */
+kiekvienos raidės. (7 taškai);
+*/
+console.log('----------task-7---------------');
 
 const newArr2 = Array(100).fill(0).map(a => 'ABCD'[Math.floor(Math.random() * 4)]);
+
+const counter = newArr2.reduce((t, c) => {
+    t[c] += 1;
+    return t;
+
+}, { 'A': 0, 'B': 0, 'C': 0, 'D': 0 });
+
 console.log(newArr2);
+console.log(`A: ${counter['A']} B: ${counter['B']} C: ${counter['C']} D: ${counter['D']}`);
 
-newArr2.reduce((t, c) => newArr2, { 'A': 0, B });
-console.log();
-
+console.clear();
 /* 8. Parašyti funkciją - lygineSuma.Funkcijos parametrai - du kintamieji.Testų reikalavimai - abu kitamieji turi būti
-   arba skaičiai arba masyvai(negali būti vienas skaičius, kitas masyvas). Jei kintamieji skaičiai, grąžinti skaičių
-   sumą, jei kintamieji masyvai - grąžinti masyvų ilgių sumą.Jei abu kintamieji skaičiai arba masyvai, bet suma nelyginė
-   - grąžinti tekstą, kad suma nelyginė. (10 taškų); */
+arba skaičiai arba masyvai(negali būti vienas skaičius, kitas masyvas). Jei kintamieji skaičiai, grąžinti skaičių
+sumą, jei kintamieji masyvai - grąžinti masyvų ilgių sumą.Jei abu kintamieji skaičiai arba masyvai, bet suma nelyginė
+- grąžinti tekstą, kad suma nelyginė. (10 taškų); */
+
+function lygineSuma(a, b) {
+
+    if (typeof a === 'number' && typeof b === 'number') {
+        return (a + b) % 2 !== 0 ? 'suma nelygine' : a + b;
+    }
+    if (Array.isArray(a) && Array.isArray(b)) {
+        return (a.length + b.length) % 2 !== 0 ? 'suma nelygine' : a.length + b.length;
+    }
+
+    return 'Abu kintamieji privalo  buti skaičiai arba masyvai';
+}
+
+console.log(lygineSuma([2], 5));
+
 /* 9. Parašyti funkciją pirminisSkaicius.Funkcija turi vieną kintamąjį.Turi būti patikrinimas, kad kintamasis yra
    skaičius.Funkcija turi grąžinti ar pateiktas skaičius yra pirminis(pirminis skaičius yra tas, kuris dalinasi tik iš
    savęs ir tik iš vieneto be liekanos.)(10 taškų); */
+
 /* 10. Parašyti funkciją telefonoNumeris.Funkcija turi priimti vieną kintamąjį - masyvą.Masyvo elementai - skaičiai,
         ilgis - 10. Funkcija turi grąžinti telefono numerį tokiu formatu - "(XXX) XXX-XXXX". (10 taškų); */
