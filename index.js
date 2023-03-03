@@ -105,7 +105,7 @@ const pirminisSkaicius = (a) => {
         if (a % i === 0) {
             counter++;
         }
-    if (counter > 2) {
+    if (counter > 1) {
         return 'Nera pirminis skaicius';
     }
 
